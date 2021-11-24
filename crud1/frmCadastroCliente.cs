@@ -87,8 +87,9 @@ namespace crud1
             }
             else
             {
-                string sql = "UPDATE CLIENTE SET NOME='" + txtNome.Text + "', ENDERECO = '" + txtEndereco.Text + "', " + "CEP= '" + mskCep.Text + "', BAIRRO= '" + txtBairro.Text + "', CIDADE = '" + txtCidade.Text + "', " + "UF= '" + txtUf.Text + "'," + "TELEFONE='" + mskTelefone.Text + "', WHERE ID=  txtId.Text";
-
+                string sql = "UPDATE CLIENTE SET NOME='" + txtNome.Text + "', ENDERECO = '" + txtEndereco.Text + "', " + "CEP= '" + mskCep.Text + "', BAIRRO= '" + txtBairro.Text + "', CIDADE = '" + txtCidade.Text + "', " + "UF= '" + txtUf.Text + "'," + "TELEFONE='" + mskTelefone.Text + "',  Where ID =  txtId.Text ";
+                //string sql = "UPDATE CLIENTE SET NOME='" + txtNome.Text + "', ENDERECO = '" + txtEndereco.Text + "', " + "CEP= '" + mskCep.Text + "', BAIRRO= '" + txtBairro.Text + "', CIDADE = '" + txtCidade.Text + "', " + "UF= '" + txtUf.Text + "'," + "TELEFONE='" + mskTelefone.Text + "', WHERE ID=  txtId.Text";
+                //  FROM Usuario   " Where idUser = 3  ";
                 SqlConnection con = new SqlConnection(connectionString);
                 SqlCommand cmd = new SqlCommand(sql, con);
                 cmd.CommandType = CommandType.Text;
@@ -268,3 +269,25 @@ namespace crud1
     }
     
 }
+/*
+CREATE DATABASE BDCADASTRO
+
+-- SELECIONA O BANCO DE DADOS 
+USE BDCADASTRO
+
+-- CRIACÇÃO DA TABELA 
+CREATE TABLE CLIENTE (
+      ID INT NOT NULL IDENTITY,
+      NOME VARCHAR(50)  NOT NULL,
+      ENDERECO VARCHAR(50),
+      CEP VARCHAR(9),
+      BAIRRO VARCHAR(50),
+      CIDADE VARCHAR(50),
+      UF VARCHAR(2),
+      TELEFONE VARCHAR(15),
+      CONSTRAINT PK_CLIENTE PRIMARY KEY(ID)
+)
+
+Select* from CLIENTE
+*/
+
